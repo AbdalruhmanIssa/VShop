@@ -1,0 +1,49 @@
+﻿@using VShop.Models
+@model List<Product>
+
+@section heading {
+            Product
+}
+@section title {
+    Show
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Bordered Table</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Cat</th>
+
+                    <th style="width: 40px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td><a href="/Admin/Products/delete/@item.Id" class="btn btn-danger mb-2">Danger</a>
+                            <a href="/Admin/Products/edit/@item.Id" class="btn btn-danger mb-2">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" href="#">«</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+    </div>
+</div>

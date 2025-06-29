@@ -1,0 +1,69 @@
+﻿@using VShop.Models
+@model Product
+@section heading {
+                Product
+}
+@section title {
+        Create
+}
+<div class="card card-primary card-outline mb-4">
+    <!--begin::Header-->
+    <div class="card-header"><div class="card-title">Quick Example</div></div>
+    <!--end::Header-->
+    <!--begin::Form-->
+    <form method="post" action="/Admin/Products/Create" enctype="multipart/form-data">
+        <!--begin::Body-->
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="Name" aria-describedby="emailHelp">
+                <span class="text-danger" asp-validation-for="Name"></span>
+
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="Description" class="form-label">Desc</label>
+                <textarea class="form-control" id="description" name="Description" aria-describedby="emailHelp"></textarea>
+
+            </div>
+            </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="Price" class="form-label">Price</label>
+                <input type="text" class="form-control" id="Price" name="Price" aria-describedby="emailHelp">
+
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="Quantity" class="form-label">Quantity</label>
+                <input type="text" class="form-control" id="quantity" name="Quantity" aria-describedby="emailHelp">
+
+            </div>
+        </div>
+        <div class="card-body" >
+            <div class="mb-3">
+                <label for="Image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="Image" aria-describedby="emailHelp">
+
+            </div>
+        </div>
+        <label>Zere</label>
+        <select class="form-control " name="CategoryId">
+            @foreach (var item in ViewBag.Catigories)
+            {
+                <option value="@item.Id">@item.Name</option>
+
+            }
+          
+</select>
+        <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer mt-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <!--end::Footer-->
+    </form>
+    <!--end::Form-->
+</div>
