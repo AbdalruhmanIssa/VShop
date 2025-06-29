@@ -43,3 +43,13 @@
         </ul>
     </div>
 </div>
+@section script {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @if (@TempData["success"] is not null)
+    {
+        <script>
+            toastr.success('@TempData["success"]');
+        </script>
+    }
+}

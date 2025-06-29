@@ -37,6 +37,9 @@
     <!--begin::Required Plugin(AdminLTE)-->
     <link href="~/admin/css/adminlte.min.css" rel="stylesheet" />
     <!--end::Required Plugin(AdminLTE)-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    @RenderSection("style",false)
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -409,6 +412,8 @@
     </script>
     <!--end::OverlayScrollbars Configure-->
     <!--end::Script-->
+    @RenderSection("script",false)
+
 </body>
 <!--end::Body-->
 </html>
